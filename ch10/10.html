@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch10 10</title>
+</head>
+<body>
+<a href="somepage.html" id="someLink">Click me</a>
+	<script>
+		var link = document.getElementById("someLink");
+
+		function linkClick(e) {
+			alert("This link is going nowhere!")
+
+			e.returnValue = false;
+		}
+
+		link.attachEvent("onclick", linkClick);
+	</script>
+</body>
+</html>

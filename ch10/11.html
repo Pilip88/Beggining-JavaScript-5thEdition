@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch10 11</title>
+</head>
+<body>
+	<img src="cat1.jpg" id="img0">
+	<div id="status"></div>
+	<script>
+		var myImages = [
+			"cat1.jpg",
+			"cat2.jpg",
+			"cat3.jpg",
+			"cat4.jpg"
+		];
+
+		function changeImg(e) {
+			var el = e.srcElement;
+			var newImgNumber = Math.round(Math.random() * 3);
+
+			while (el.src.indexOf(myImages[newImgNumber]) != -1) {
+				newImgNumber = Math.round(Math.random() * 3);
+			}
+			el.src = myImages[newImgNumber];
+		}
+
+		function updateStatus(e) {
+			var el = e.srcElement;
+			var status = document.getElementById("status");
+
+			status.innerHTML = "The image changed to " + el.src;
+
+			if (el.src.indexOf("cat4") > -1) {
+				el.detachEvent("onclick", changeImg);
+				el.detachEvent("onclick", updateStatus);
+			}
+		}
+
+		var imgObj = document.getElementById("img0");
+		imgObj.attachEvent("onclick", updateStatus);
+		imgObj.attachEvent("onclick", changeImg)
+	</script>
+</body>
+</html>
