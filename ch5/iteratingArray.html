@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch5 extra</title>
+</head>
+<body>
+	<script>
+	var numbers = [1, 2, 3, 4, 5];
+
+	function isLessThan3 (value, index, array) {
+		var returnValue = false;
+
+		if (value < 3) {
+			returnValue = true;
+		}
+		return returnValue;
+	}
+
+	alert("Every is " + numbers.every(isLessThan3) + 
+		" Some is " + numbers.some(isLessThan3));
+	</script>
+</body>
+</html>

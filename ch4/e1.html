@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch4 e1</title>
+</head>
+<body>
+	<script>
+		var timesTableNumber = prompt("Enter number for times table:");
+		var timesTableStart = prompt("Enter times table start:");
+		var timesTableEnd = prompt("Enter times table end:");
+		function timesTable(number, start, end) {
+			for(n = start; n <= end; n++) {
+				document.write(n + " * " + number + " = " + 
+					(n * number) + "<br/>");
+			};
+		};
+
+		timesTable(timesTableNumber, timesTableStart, timesTableEnd);
+	</script>
+</body>
+</html>

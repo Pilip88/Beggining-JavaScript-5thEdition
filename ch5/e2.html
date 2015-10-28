@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch5 e2</title>
+</head>
+<body>
+	<script>
+	var names = [];
+	var newName;
+	while ((newName = prompt("Enter name:", "")) != "") {
+		names.push(newName);
+	}
+	names.sort();
+	document.write(names.join("<br/>"));
+	</script>
+</body>
+</html>

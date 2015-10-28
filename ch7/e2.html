@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch7 e2</title>
+</head>
+<body>
+	<div id="clock"></div>
+	<script>
+		function updateTime() {
+			var currentDate = new Date();
+			var currentSeconds = currentDate.getSeconds();
+			var currentMinutes = currentDate.getMinutes();
+			var currentHours = currentDate.getHours();
+			var clock = currentHours + ":" + currentMinutes + ":" + currentSeconds;
+			document.getElementById("clock").innerHTML = clock;
+		}
+		setInterval(updateTime, 1000);
+	</script>
+</body>
+</html>

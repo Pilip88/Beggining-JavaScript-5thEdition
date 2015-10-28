@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch10 1</title>
+</head>
+<body>
+	<img src="cat1.jpg" onclick="changeImg(this)">
+	<img src="cat2.jpg" onclick="changeImg(this)">
+	<h2 onclick="handle(event)">Click me</h2>
+	<p ondblclick="handle(event)">Click me twice</p>
+	<span onmouseover="handle(event)">Hover me</span>
+	<script>
+		var myImages = [
+			"cat1.jpg",
+			"cat2.jpg",
+			"cat3.jpg",
+			"cat4.jpg"
+		];
+
+		function changeImg(that) {
+			var newImgNumber = Math.round(Math.random() * 3);
+
+			while (that.src.indexOf(myImages[newImgNumber]) != -1) {
+				newImgNumber = Math.round(Math.random() * 3);
+			}
+
+			that.src = myImages[newImgNumber];
+		}
+
+		function handle(e) {
+			alert(e.type);
+		}
+	</script>
+</body>
+</html>

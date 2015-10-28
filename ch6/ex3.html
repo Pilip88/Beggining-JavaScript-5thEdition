@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch6 e3</title>
+</head>
+<body>
+	<script>
+		var bannedRegExp = /(\btime)? ?(bomb)|(\bfuck)(ing\b)?/gi;
+		var message = prompt("Enter your message: ", "");
+		message = message.replace(bannedRegExp, "****");
+		document.write(message);
+	</script>
+</body>
+</html>

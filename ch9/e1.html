@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch9 e1</title>
+</head>
+<body>
+	<script>
+		var htmlElement;
+		var bodyElement;
+		var tableElement;
+		var firstTableRow;
+		var secondTableRow;
+		var thirdTableRow;
+		var firstTrFirstTd;
+		var firstTrSecondTd;
+		var firstTrThirdTd;
+		var secondTrFirstTd;
+		var secondTrSecondTd;
+		var secondTrThirdTd;
+		var thirdTrFirstTd;
+		var thirdTrSecondTd;
+		var thirdTrThirdTd;
+		var firstTrFirstTextNode;
+		var firstTrSecondTextNode;
+		var firstTrThirdTextNode;
+		var secondTrFirstTextNode;
+		var secondTrSecondTextNode;
+		var secondTrThirdTextNode;
+		var thirdTrFirstTextNode;
+		var thirdTrSecondTextNode;
+		var thirdTrThirdTextNode;
+
+		/* Get html element */
+		htmlElement = document.documentElement;
+
+		/* Get body element */
+		if (htmlElement.firstChild.nextSibling.nodeType == 3) {
+			bodyElement = htmlElement.firstChild.nextSibling.nextSibling;
+		} else {
+			bodyElement = htmlElement.firstChild.nextSibling;
+		}
+
+		/* Create table element */
+		tableElement = document.createElement("table");
+
+		/* Create table rows */
+		firstTableRow = document.createElement("tr");
+		secondTableRow = document.createElement("tr");
+		thirdTableRow = document.createElement("tr");
+
+		/* Create td's for first row */
+		firstTrFirstTd = document.createElement("td");
+		firstTrSecondTd = document.createElement("td");
+		firstTrThirdTd = document.createElement("td");
+
+		/* Create td's for second row */
+		secondTrFirstTd = document.createElement("td");
+		secondTrSecondTd = document.createElement("td");
+		secondTrThirdTd = document.createElement("td");
+
+		/* Create td's for third row */
+		thirdTrFirstTd = document.createElement("td");
+		thirdTrSecondTd = document.createElement("td");
+		thirdTrThirdTd = document.createElement("td");
+
+		/* Create TextNodes for first row */
+		firstTrFirstTextNode = document.createTextNode("Car");
+		firstTrSecondTextNode = document.createTextNode("Top Speed");
+		firstTrThirdTextNode = document.createTextNode("Price");
+
+		/* Create TextNodes for second row */
+		secondTrFirstTextNode = document.createTextNode("Chevrolet");
+		secondTrSecondTextNode = document.createTextNode("120mph");
+		secondTrThirdTextNode = document.createTextNode("$10,000");
+
+		/* Create TextNodes for third row */
+		thirdTrFirstTextNode = document.createTextNode("Pontiac");
+		thirdTrSecondTextNode = document.createTextNode("140mph");
+		thirdTrThirdTextNode = document.createTextNode("$20,000");
+
+		/* Append TextNodes to first td */
+		firstTrFirstTd.appendChild(firstTrFirstTextNode);
+		firstTrSecondTd.appendChild(firstTrSecondTextNode);
+		firstTrThirdTd.appendChild(firstTrThirdTextNode);
+
+		/* Append TextNodes to second td */
+		secondTrFirstTd.appendChild(secondTrFirstTextNode);
+		secondTrSecondTd.appendChild(secondTrSecondTextNode);
+		secondTrThirdTd.appendChild(secondTrThirdTextNode);
+
+		/* Append TextNodes to third td */
+		thirdTrFirstTd.appendChild(thirdTrFirstTextNode);
+		thirdTrSecondTd.appendChild(thirdTrSecondTextNode);
+		thirdTrThirdTd.appendChild(thirdTrThirdTextNode);
+
+		/* Append td's to first row */
+		firstTableRow.appendChild(firstTrFirstTd);
+		firstTableRow.appendChild(firstTrSecondTd);
+		firstTableRow.appendChild(firstTrThirdTd);
+
+		/* Append td's to second row */
+		secondTableRow.appendChild(secondTrFirstTd);
+		secondTableRow.appendChild(secondTrSecondTd);
+		secondTableRow.appendChild(secondTrThirdTd);
+
+		/* Append td's to third row */
+		thirdTableRow.appendChild(thirdTrFirstTd);
+		thirdTableRow.appendChild(thirdTrSecondTd);
+		thirdTableRow.appendChild(thirdTrThirdTd);
+
+		/* Append table rows to table */
+		tableElement.appendChild(firstTableRow);
+		tableElement.appendChild(secondTableRow);
+		tableElement.appendChild(thirdTableRow);
+
+		/* Append table to body element */
+		bodyElement.appendChild(tableElement);
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch4 1</title>
+</head>
+<body>
+	<script>
+	function convertToCentrigrade(degFahren) {
+		var degCent = 5/9 * (degFahren - 32);
+
+		return degCent;
+	};
+
+	var degFahren = [212, 32, -459.15];
+	var degCent = [];
+
+	for (var indexFahren in degFahren) {
+		degCent[indexFahren] = convertToCentrigrade(degFahren[indexFahren])
+	};
+
+	for (var indexCent in degCent) {
+		document.write("Value " + indexCent + " was " + degFahren[indexCent] + 
+			"\xB0 Fahrenheit");
+		document.write(" which is " + degCent[indexCent] + "\xB0 centigrade.<br/>");
+	};
+	</script>
+</body>
+</html>

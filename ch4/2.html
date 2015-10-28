@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch4 2</title>
+</head>
+<body>
+	<script>
+	function toCentragrade(degFahren) {
+		var degCent = 5/9 * (degFahren - 32);
+
+		document.write(degFahren + " Fahrenheit is " + 
+			degCent + " Celsius.<br/>");
+	};
+
+	function toFahrenheit(degCent) {
+		var degFahren = 9/5 * degCent + 32;
+
+		document.write(degCent + " Celsius is " + 
+			degFahren + " Fahrenheit.<br/>");
+	};
+
+	function convert(converter, temperature) {
+		converter(temperature);
+	};
+
+	convert(toFahrenheit, 23);
+	convert(toCentragrade, 75);
+	</script>
+</body>
+</html>

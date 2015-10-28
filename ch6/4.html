@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch6 4</title>
+</head>
+<body>
+	<script>
+	var text = "He than said 'My name is O'Connerly, yes " +
+				"that's right, O'Connerly'";
+
+	document.write("Original: " + text + "<br/>");
+
+	var myRegEx = /\B'|'\B/g;
+	text = text.replace(myRegEx, '"');
+
+	document.write("Corrected: " + text);
+	</script>
+</body>
+</html>

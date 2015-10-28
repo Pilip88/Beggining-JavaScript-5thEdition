@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch8 imgch</title>
+</head>
+<body>
+	<img src="cat4.jpg" width="200" height="150" alt="My image"/>
+	<script>
+		var myImages = [
+			"cat1.jpg",
+			"cat2.jpg",
+			"cat3.jpg",
+			"cat4.jpg"
+			];
+		var imgIndex = 0;
+
+		function changeImg() {
+			if (imgIndex > 3) {
+				imgIndex = 0;
+			} else {
+				imgIndex += 1;
+			}
+			document.images[0].src = myImages[imgIndex];
+		}
+
+		setInterval(changeImg, 1000);
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch8 3</title>
+</head>
+<body>
+	<img src="" width="200" height="150" alt="My image"/>
+	<script>
+		var myImages = [
+			"cat1.jpg",
+			"cat2.jpg",
+			"cat3.jpg",
+			"cat4.jpg"
+			];
+
+		document.images[0].src = myImages[Math.floor(Math.random() * (3 - 0 + 1))];
+	</script>
+</body>
+</html>

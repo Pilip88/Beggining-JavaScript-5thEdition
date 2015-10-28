@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch10 5</title>
+</head>
+<body>
+	<a href="somehtml.html" id="someLink">Click me</a>
+	<script>
+		var link = document.getElementById("someLink");
+
+		link.addEventListener("click", function (e) {
+			alert("This link is going nowhere!");
+
+			e.preventDefault();
+		})
+	</script>
+</body>
+</html>

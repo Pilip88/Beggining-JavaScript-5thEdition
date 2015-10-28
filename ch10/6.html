@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch10 6</title>
+</head>
+<body>
+	<img src="cat1.jpg" id="img0">
+	<img src="cat2.jpg" id="img1">
+	<script>
+		var myImages = [
+			"cat1.jpg",
+			"cat2.jpg",
+			"cat3.jpg",
+			"cat4.jpg"
+		];
+
+		function changeImg (e) {
+			var el = e.target;
+			var newImgNumber = Math.round(Math.random() * 3);
+
+			while (el.src.indexOf(myImages[newImgNumber]) != -1) {
+				newImgNumber = Math.round(Math.random() * 3);
+			}
+
+			el.src = myImages[newImgNumber];
+		}
+
+		document.getElementById("img0").addEventListener("click", changeImg);
+		document.getElementById("img1").addEventListener("click", changeImg);
+	</script>
+</body>
+</html>

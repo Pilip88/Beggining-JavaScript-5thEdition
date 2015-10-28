@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch6 e2</title>
+</head>
+<body>
+	<div id="output"></div>
+	<script>
+		var sentance = "a dog walked in off a street and ordered a finest beer";
+		var myRegExp = /\ba\b/g;
+		sentance = sentance.replace(myRegExp, "the");
+		document.write(sentance);
+	</script>
+</body>
+</html>

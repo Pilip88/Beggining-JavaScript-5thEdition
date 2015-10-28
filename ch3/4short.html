@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch3 4 short</title>
+</head>
+<body>
+	<script>
+	var degFahren = [212, 32, -459.15];
+	var degCent;
+	
+	for (var elementIndex in degFahren) {
+		degCent = 5/9 * (degFahren[elementIndex] - 32);
+		document.write("Value " + elementIndex + " was " + degFahren[elementIndex] + 
+			"\xB0 Fahrenheit which is " + 
+			degCent + "\xB0 centigrade.<br/>");
+	};
+	</script>
+</body>
+</html>

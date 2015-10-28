@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch8 geo</title>
+</head>
+<body>
+	<div id="loc"></div>
+	<script>
+		function success (position) {
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
+			var altitude = position.coords.altitude;
+			var speed = position.coords.speed;
+			alert("Your position is " + latitude + " latitude, " +
+				longitude + " longitude, " + altitude + " altitude," +
+				"and your speed is " + speed + "m/s.");
+		}
+
+		navigator.geolocation.getCurrentPosition(success);
+	</script>
+</body>
+</html>

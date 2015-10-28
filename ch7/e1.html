@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch7 5</title>
+</head>
+<body>
+	<div id="output">
+		
+	</div>
+	<script>
+		var days = ["Sunday", "Monday", "Tuesday", "Wednesday",
+					"Thursday", "Friday", "Saturday"]
+		var input = prompt("Enter your date of birth: ", "");
+		var dateOfBirth = new Date(input);
+		var dayOfBirth = dateOfBirth.getDay();
+		alert(days[dayOfBirth]);
+	</script>
+</body>
+</html>

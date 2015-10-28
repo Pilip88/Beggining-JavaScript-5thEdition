@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch4 e1</title>
+</head>
+<body>
+	<script>
+
+		function timesTable(number, start, end) {
+				for(n = start; n <= end; n++) {
+					document.write(n + " * " + number + " = " + 
+						(n * number) + "<br/>");
+				};
+			};
+
+		var timesTableNumber;
+		
+		while((timesTableNumber = prompt("Enter number for times table:", -1)) != -1) {
+			while(isNaN(timesTableNumber) == true) {
+				timesTableNumber = prompt(timesTableNumber + " is not a valid number!" + 
+					" Please enter valid number:", -1);
+			};
+			var timesTableStart = prompt("Enter start number:");
+			var timesTableEnd = prompt("Enter end number:");
+			timesTable(timesTableNumber, timesTableStart, timesTableEnd);
+		};
+	</script>
+</body>
+</html>

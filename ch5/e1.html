@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch5 e1</title>
+</head>
+<body>
+	<script>
+	var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
+					"Aug", "Sep", "Oct", "Nov", "Dec"];
+	var currentDate = new Date();
+	var currentMonth = currentDate.getMonth();
+	currentDate.setMonth(currentMonth + 12);
+	document.write("12 months from now will be: " +
+		currentDate.getDate() + ":" + months[currentDate.getMonth()] +
+		":" + currentDate.getFullYear());
+	</script>
+</body>
+</html>

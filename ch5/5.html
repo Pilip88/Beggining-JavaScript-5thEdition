@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch5 5</title>
+</head>
+<body>
+	<script>
+	function fix(fixNumber, decimalPlaces) {
+		var div = Math.pow(10, decimalPlaces);
+		fixNumber = Math.round(fixNumber * div) / div;
+		return fixNumber;
+	}
+
+	var numberOne = prompt("Enter the number with decimal places you " + 
+		"want to fix:", "");
+	var numberTwo = prompt("How many decimal places do you want?", "");
+
+	document.write(numberOne + " fixed to " + numberTwo + " decimal" + 
+		" places is: " + fix(numberOne, numberTwo));
+	</script>
+</body>
+</html>
