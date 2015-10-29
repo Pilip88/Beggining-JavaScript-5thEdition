@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch10 e2</title>
+</head>
+<body>
+	<img src="cat1.jpg" id="img0">
+	<div id="status"></div>
+	<script src="event-utility.js"></script>
+	<script>
+		var myImages = [
+			"cat1.jpg",
+			"cat2.jpg",
+			"cat3.jpg",
+			"cat4.jpg"
+		];
+
+		function changeImg (e) {
+			var el = evt.getTarget(e);
+			var newImgNumber = Math.round(Math.random() * 3);
+
+			while (el.src.indexOf(myImages[newImgNumber]) != -1) {
+				newImgNumber = Math.round(Math.random() * 3);
+			}
+
+			el.src = myImages[newImgNumber];
+		}
+
+		function updateStatus(e) {
+			var el = evt.getTarget(e);
+			var status = document.getElementById("status");
+
+			status.innerHTML = "The image changed to " + el.src;
+
+			if (el.src.indexOf("cat4.jpg") > -1) {
+				evt.removeListener(el, "click", changeImg);
+				evt.removeListener(el, "click", updateStatus);
+			}
+		}
+
+		var imgObj = document.getElementById("img0");
+
+		if (evt.isOldIE()) {
+			evt.addListener(imgObj, "click", updateStatus);
+			evt.addListener(imgObj, "click", changeImg);
+		} else {
+			evt.addListener(imgObj, "click", changeImg);
+			evt.addListener(imgObj, "click", updateStatus)
+		}
+	</script>
+</body>
+</html>

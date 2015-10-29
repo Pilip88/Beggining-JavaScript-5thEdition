@@ -27,5 +27,8 @@ var evt = {
 		} else {
 			e.returnValue = false;
 		}
+	},
+	isOldIE: function() {
+		return typeof document.addEventListener == "undefined";
 	}
 };
