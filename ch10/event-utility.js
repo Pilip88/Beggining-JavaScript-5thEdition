@@ -16,8 +16,10 @@ var evt = {
 	getTarget: function(e) {
 		if (e.target) {
 			return e.target;
+		} else {
+			return e.srcElement;
 		}
-		return e.srcElement;
+		
 	},
 	preventDefault: function(e) {
 		if (e.preventDefault) {
