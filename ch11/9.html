@@ -59,6 +59,7 @@
 		myForm.lstCity.addEventListener("change", updateTimeZone);
 		myForm.chkDst.addEventListener("click", updateTimeZone);
 
+		setInterval(updateTimeZone, 1000);
 		updateTimeZone();
 	</script>
 </body>
