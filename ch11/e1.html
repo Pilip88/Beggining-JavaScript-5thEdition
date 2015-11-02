@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch11 e1</title>
+</head>
+<body>
+	<form id="form1" name="form1">
+		<p>
+			<label for="degFahre">Enter temperature in degrees fahrenheit: </label>
+			<input type="number" id="degFahre" name="degFahre" value="0">
+			<input type="button" value="Convert" id="button" name="button">
+		</p>
+	</form>
+	<div>
+		<meter id="degMeter" value="0" min="-40" low="0" optimum="20" high="35" max="50">
+		</meter>
+		<span id="degCent"></span>
+	</div>
+
+	<script>
+		var myForm = document.form1;
+		var button = document.getElementById("button");
+
+		function calculateCent() {
+			var degFahre = myForm.degFahre.value;
+			var degCent = document.getElementById("degCent");
+			var meter = document.getElementById("degMeter");
+
+			var calculateCent = 5/9*(degFahre-32);
+			degCent.innerHTML = "Temperature in degrees centrigrade is " +
+				parseInt(calculateCent);
+
+			meter.value = calculateCent;
+		}
+
+		button.addEventListener("click", calculateCent);
+	</script>
+</body>
+</html>
