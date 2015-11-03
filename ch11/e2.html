@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch11 e2</title>
+</head>
+<body>
+	<form id="myForm" name="myForm">
+		<h2>Select your components:</h2>
+		<br/>
+		<p>
+			Processor:
+			<select name="processor">
+				<option value="14540">Intel Core i3 3.7GHz</option>
+				<option value="22520">Intel Core i5 3.2GHz</option>
+				<option value="30020">Intel Core i5 3.5GHz</option>
+				<option value="43210">Intel Core i7 3.5GHz</option>
+				<option value="76200">Intel Core i7 3.7GHz</option>
+			</select>
+		</p>
+		<p>
+			MotherBoard:
+			<select name="motherBoard">
+				<option value="4920">ASRock H61M</option>
+				<option value="11670">GigaByte H97</option>
+				<option value="16920">MSI Z97</option>
+				<option value="30020">Asus P9X79</option>
+				<option value="75830">GigaByte GA-Z170X</option>
+			</select>
+		</p>
+		<p>
+			VGA Card:
+			<select name="vgaCard">
+				<option value="4400">Asus 210-SL-1GD3</option>
+				<option value="8990">GigaByte AMD Radeon R7</option>
+				<option value="51820">GigaByte GTX970</option>
+				<option value="72690">Asus STRIX-GTX980</option>
+				<option value="89920">Asus GTX980</option>
+			</select>
+		</p>
+		<p>
+			<label>DVD-ROM</label>
+			<input type="radio" name="rom" value="2000" checked="checked">
+
+			<label>Blu-ray</label>
+			<input type="radio" name="rom" value="4200">
+		</p>
+		<p>
+			<input type="button" value="Submit" id="btnSub" name="btnSub">
+		</p>
+		<div id="summary"></div>
+	</form>
+
+	<script>
+		var myForm = document.myForm;
+		var processor = myForm.processor;
+		var motherBoard = myForm.motherBoard;
+		var vgaCard = myForm.vgaCard;
+		var button = document.getElementById("btnSub");
+
+		function getRomCost() {
+			var roms = myForm.rom;
+
+			for (var index = 0; index < roms.length; index++) {
+				if (roms[index].checked) {
+					return roms[index].value;
+				}
+			}
+		}
+
+		function calculateCost() {
+			var processorCost = parseInt(processor.value);
+			var motherBoardCost = parseInt(motherBoard.value);
+			var vgaCardCost = parseInt(vgaCard.value);
+			var romCost = parseInt(getRomCost());
+			var summary = document.getElementById("summary");
+
+			summary.innerHTML = "Total cost: "
+			summary.innerHTML += processorCost + motherBoardCost + vgaCardCost +
+				romCost;
+		}
+
+		button.addEventListener("click", calculateCost);
+	</script>
+</body>
+</html>
