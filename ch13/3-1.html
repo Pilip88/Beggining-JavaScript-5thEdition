@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch13 3-1</title>
+</head>
+<body>
+	<h1>Welcome to example 3-1</h1>
+
+	<div id="whatsNew"></div>
+
+	<script src="cookiefunctions.js"></script>
+	<script>
+	var lastUpdated = new Date("Tue, 28 Dec 2020");
+	var lastVisit = getCookieValue("LastVisit");
+
+	if (lastVisit) {
+		lastVisit = new Date(lastVisit);
+
+		if (lastVisit < lastUpdated) {
+			document.getElementById("whatsNew").innerHTML = 
+				"<a href='3-2.html'>What's new?</a>";
+		}
+	}
+
+	var now = new Date();
+	setCookie("lastVisit", now.toUTCString());
+	</script>
+</body>
+</html>

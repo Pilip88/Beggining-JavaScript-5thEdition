@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch13 e1</title>
+</head>
+<body>
+	<h3>You visited this page <span id="visits"></span> time<span id="times"></span>!</h3>
+	<script>
+		var now = new Date();
+		var visitsCount = localStorage.visitsCount;
+		var expireDate = localStorage.expireDate;
+		var visits = document.getElementById("visits");
+
+		if (!visitsCount || expireDate < now) {
+			visitsCount = 0;
+			expireDate = now.setMonth(now.getMonth + 1);
+		}
+
+		localStorage.visitsCount = parseInt(visitsCount, 10) + 1
+		visits.innerHTML = localStorage.visitsCount;
+	</script>
+</body>
+</html>
