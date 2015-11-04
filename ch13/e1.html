@@ -4,19 +4,32 @@
 	<title>Ch13 e1</title>
 </head>
 <body>
-	<h3>You visited this page <span id="visits"></span> time<span id="times"></span>!</h3>
+	<h3>You visited this page <span id="visits"></span> time<span id="times">s</span>!</h3>
 	<script>
 		var now = new Date();
 		var visitsCount = localStorage.visitsCount;
-		var expireDate = localStorage.expireDate;
+		var firstVisit = localStorage.firstVisit;
 		var visits = document.getElementById("visits");
+		var times = document.getElementById("times");
 
-		if (!visitsCount || expireDate < now) {
+		if (visitsCount == null) {
 			visitsCount = 0;
-			expireDate = now.setMonth(now.getMonth + 1);
+			localStorage.firstVisit = now.toUTCString();
 		}
 
-		localStorage.visitsCount = parseInt(visitsCount, 10) + 1
+		var firstVisit = new Date(firstVisit);
+		var expireDate = firstVisit.setMinutes(firstVisit.getMinutes() + 1);
+		var expireDate = new Date(expireDate);
+
+		if (now > expireDate) {
+			visitsCount = 0;
+			localStorage.firstVisit = now.toUTCString();
+		}
+
+		localStorage.visitsCount = parseInt(visitsCount, 10) + 1;
+		if (parseInt(localStorage.visitsCount) == 1) {
+			times.innerHTML = "";
+		}
 		visits.innerHTML = localStorage.visitsCount;
 	</script>
 </body>
