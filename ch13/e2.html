@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ch13 e2</title>
+</head>
+<body>
+	<img src="" id="ad">
+	<script>
+	var images = [
+		"1.jpg",
+		"2.jpg",
+		"3.jpg",
+		"4.jpg",
+		"5.jpg"
+	];
+
+	var ad = document.getElementById("ad");
+	var lastNumber = localStorage.getItem("lastNumber");
+	var nextNumber = randomNumber();
+
+	function randomNumber () {
+		return Math.floor(Math.random() * images.length)
+	}
+
+	if (lastNumber == null) {
+		lastNumber = nextNumber;
+	} else {
+		lastNumber = parseInt(lastNumber, 10)
+		while (nextNumber == lastNumber) {
+			nextNumber = randomNumber();
+		}
+	}
+
+	localStorage.setItem("lastNumber", nextNumber)
+	ad.src = images[lastNumber];
+	</script>
+</body>
+</html>
